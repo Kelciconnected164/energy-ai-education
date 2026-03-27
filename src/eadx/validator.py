@@ -28,8 +28,24 @@ class ValidationResult:
 
 REQUIRED_TOP_LEVEL = ["name", "licenses", "resources", "eadx_profile"]
 REQUIRED_EADX_PROFILE = ["spec_version", "domain", "tasks", "sensitivity"]
-VALID_DOMAINS = {"generation", "transmission", "distribution", "markets", "customer", "der", "other"}
-VALID_TASKS = {"forecasting", "anomaly-detection", "optimization", "rl", "eda", "classification", "other"}
+VALID_DOMAINS = {
+    "generation",
+    "transmission",
+    "distribution",
+    "markets",
+    "customer",
+    "der",
+    "other",
+}
+VALID_TASKS = {
+    "forecasting",
+    "anomaly-detection",
+    "optimization",
+    "rl",
+    "eda",
+    "classification",
+    "other",
+}
 VALID_SENSITIVITY = {"public", "internal", "restricted", "ceii"}
 
 
@@ -81,7 +97,9 @@ def validate_package(path: str | Path) -> ValidationResult:
 
         domain = profile.get("domain", "")
         if domain and domain not in VALID_DOMAINS:
-            warnings.append(f"eadx_profile.domain '{domain}' is not in the known set {sorted(VALID_DOMAINS)}")
+            warnings.append(
+                f"eadx_profile.domain '{domain}' is not in the known set {sorted(VALID_DOMAINS)}"
+            )
 
         tasks = profile.get("tasks", [])
         if isinstance(tasks, list):
@@ -91,7 +109,9 @@ def validate_package(path: str | Path) -> ValidationResult:
 
         sensitivity = profile.get("sensitivity", "")
         if sensitivity and sensitivity not in VALID_SENSITIVITY:
-            warnings.append(f"eadx_profile.sensitivity '{sensitivity}' is not in the known set {sorted(VALID_SENSITIVITY)}")
+            warnings.append(
+                f"eadx_profile.sensitivity '{sensitivity}' is not in the known set {sorted(VALID_SENSITIVITY)}"
+            )
 
         if sensitivity in ("restricted", "ceii"):
             warnings.append(

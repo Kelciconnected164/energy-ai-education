@@ -6,16 +6,18 @@ on:
   push:
     branches: [main]
 
-permissions:
-  security-events: write
-  id-token: write
-  contents: read
-  actions: read
+# Scorecard requires top-level read-all; write permissions are set per-job only.
+permissions: read-all
 
 jobs:
   analysis:
     name: Scorecard analysis
     runs-on: ubuntu-latest
+    permissions:
+      security-events: write   # upload SARIF to GitHub Code Scanning
+      id-token: write          # publish results to Scorecard API
+      contents: read
+      actions: read
     steps:
       - uses: actions/checkout@v4
         with:

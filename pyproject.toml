@@ -81,7 +81,7 @@ strict = false
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]
-testpaths = ["src", "benchmarks/harness"]
+testpaths = ["tests", "benchmarks/harness"]
 addopts = "-q --tb=short"
 markers = [
     "smoke: quick smoke tests (run in CI on every push)",
