@@ -66,9 +66,6 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/craigm26/energy-ai-education
-  analytics:
-    provider: custom
-
 nav:
   - Home: index.md
   - Learning Paths:
