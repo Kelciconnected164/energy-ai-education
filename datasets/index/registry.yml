@@ -1,0 +1,123 @@
+# EA-DX Dataset Registry
+# Each entry is a pointer to an external dataset source.
+# No large raw data is committed to this repository.
+# Add entries here + a dataset card in datasets/cards/ when contributing.
+
+datasets:
+
+  - name: gridfm-datakit-synthetic
+    title: "GridFM DataKit — Synthetic Power Flow / OPF Datasets"
+    type: generator  # not a static download; generates data on demand
+    source: "https://github.com/gridfm/gridfm-datakit"
+    license: "Apache-2.0"
+    domain: transmission
+    tasks:
+      - optimization
+      - eda
+    temporal_coverage: null  # steady-state snapshots, not time-series
+    resolution: null  # per operating-state snapshot
+    sensitivity: public
+    anonymization: synthetic
+    card: "docs/datasets/gridfm-datakit.md"
+    install: "pip install gridfm-datakit"
+    notes: >
+      LF Energy GridFM project data generation engine. Generates synthetic
+      AC power flow and OPF datasets from MATPOWER/PGLib reference networks.
+      Scales to 30k buses. No real operational data involved.
+
+  - name: open-power-system-data
+    title: "Open Power System Data"
+    type: download
+    source: "https://open-power-system-data.org/"
+    license: "CC BY 4.0"
+    domain: generation
+    tasks:
+      - forecasting
+      - eda
+    temporal_coverage:
+      start: "2006-01-01"
+      end: null  # ongoing
+    resolution: PT1H
+    sensitivity: public
+    card: null  # dataset card not yet written — contributions welcome
+    notes: >
+      Curated European power system time-series data: load, wind/solar generation,
+      prices, cross-border flows. Multiple European countries.
+
+  - name: ercot-hourly-load
+    title: "ERCOT Hourly Load Data"
+    type: download
+    source: "https://www.ercot.com/gridinfo/load/load_hist"
+    license: "public"  # ERCOT public data, no explicit SPDX
+    domain: markets
+    tasks:
+      - forecasting
+    temporal_coverage:
+      start: "2002-01-01"
+      end: null  # ongoing
+    resolution: PT1H
+    sensitivity: public
+    card: null
+    notes: >
+      Texas (ERCOT) actual and forecast system load. Hourly, publicly available.
+      Good baseline for load forecasting benchmarks.
+
+  - name: gefcom2014
+    title: "GEFCom 2014 — Global Energy Forecasting Competition"
+    type: download
+    source: "https://www.kaggle.com/datasets/robikscube/gefcom2014"
+    license: null  # check per-track; varies
+    domain: generation
+    tasks:
+      - forecasting
+    temporal_coverage:
+      start: "2005-01-01"
+      end: "2014-12-31"
+    resolution: PT1H
+    sensitivity: public
+    card: null
+    notes: >
+      Four tracks: electric load, price, wind, solar. Widely used benchmark.
+      Verify license for each track before publishing model results.
+
+  - name: nrel-nsrdb
+    title: "NREL National Solar Radiation Database (NSRDB)"
+    type: download
+    source: "https://nsrdb.nrel.gov/"
+    license: "CC BY 4.0"
+    domain: generation
+    tasks:
+      - forecasting
+      - eda
+    temporal_coverage:
+      start: "1998-01-01"
+      end: null  # ongoing
+    resolution: PT30M
+    sensitivity: public
+    card: null
+    notes: >
+      Hourly/30-min solar irradiance and meteorological data for the Americas.
+      Free API access. Useful for solar DER output forecasting.
+
+  - name: uci-household-power
+    title: "UCI Individual Household Electric Power Consumption"
+    type: download
+    source: "https://archive.ics.uci.edu/dataset/235/individual+household+electric+power+consumption"
+    license: "CC BY 4.0"
+    domain: customer
+    tasks:
+      - eda
+      - anomaly-detection
+      - forecasting
+    temporal_coverage:
+      start: "2006-12-16"
+      end: "2010-11-26"
+    resolution: PT1M
+    sensitivity: public
+    anonymization: anonymized  # single household, no name/address
+    card: null
+    notes: >
+      ~2M minute-level measurements from a single French household.
+      ~1.25% missing values. Classic EDA and anomaly detection dataset.
+      Note: single-household resolution may have re-identification risk at
+      fine granularity; treat as effectively anonymized but document usage.

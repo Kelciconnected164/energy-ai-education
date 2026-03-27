@@ -6,12 +6,22 @@ All datasets in this hub are **pointer-only** — we do not commit large raw dat
 
 - Datasets must have a clear open license (CC0, CC BY, ODC-By, ODbL, or similar)
 - No customer PII, no CEII — synthetic or fully anonymised data only
-- Every dataset must have a [dataset card](template.md) in `datasets/cards/`
+- Every dataset must have a [dataset card](template.md) in `docs/datasets/`
+
+## Featured: GridFM DataKit
+
+!!! tip "Foundation model training data"
+    The [LF Energy GridFM project](https://lfenergy.org/projects/gridfm/) provides [`gridfm-datakit`](https://github.com/gridfm/gridfm-datakit) — a Python library for generating **synthetic, realistic power flow (PF) and optimal power flow (OPF) datasets** from MATPOWER/PGLib reference networks.
+
+    Unlike static datasets, it generates data on demand at scale (up to 30,000 buses). Ideal for pre-training foundation models or benchmarking ML-OPF solvers.
+
+    [:octicons-arrow-right-24: GridFM DataKit dataset card](gridfm-datakit.md)
 
 ## Curated datasets
 
 | Dataset | Domain | Task | License | Size | Card |
 |---------|--------|------|---------|------|------|
+| [GridFM DataKit](https://github.com/gridfm/gridfm-datakit) ⭐ | Transmission | Optimization, EDA | Apache-2.0 | On-demand | [Card](gridfm-datakit.md) |
 | [Open Power System Data](https://open-power-system-data.org/) | Generation / Transmission | Forecasting, EDA | CC BY 4.0 | ~GB | — |
 | [ERCOT hourly load](https://www.ercot.com/gridinfo/load/load_hist) | Markets | Forecasting | Public | MB | — |
 | [GEFCom 2014](https://www.kaggle.com/datasets/robikscube/gefcom2014) | Generation / Markets | Forecasting | Varies | MB | — |

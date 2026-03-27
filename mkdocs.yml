@@ -73,12 +73,15 @@ nav:
     - Foundations: learning-paths/foundations.md
     - Applied: learning-paths/applied.md
     - Advanced: learning-paths/advanced.md
+  - Concepts:
+    - Foundation Models for Grids: concepts/foundation-models.md
   - EA-DX Format:
     - Introduction: eadx/index.md
     - Observations schema: eadx/observations.md
     - Standard mappings: eadx/mappings.md
   - Datasets:
     - Curated registry: datasets/index.md
+    - GridFM DataKit (synthetic PF/OPF): datasets/gridfm-datakit.md
     - Dataset card template: datasets/template.md
   - Benchmarks:
     - Overview: benchmarks/index.md

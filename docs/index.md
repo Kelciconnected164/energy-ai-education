@@ -118,11 +118,21 @@ Maps to CIM `IntervalReading`, Green Button `IntervalBlock`, OpenADR signals, AN
 
 ---
 
+## Foundation models for grids
+
+The [LF Energy GridFM project](https://lfenergy.org/projects/gridfm/) is building open foundation models for the power grid — pre-trained on large synthetic PF/OPF datasets and fine-tunable on proprietary utility data. Our advanced track and dataset registry integrate directly with the GridFM ecosystem.
+
+[:fontawesome-solid-bolt: Foundation models concept page](concepts/foundation-models.md){ .md-button }
+[:octicons-package-16: GridFM DataKit dataset card](datasets/gridfm-datakit.md){ .md-button }
+
+---
+
 ## Benchmarks
 
 | Benchmark | Domain | Metric | Status |
 |-----------|--------|--------|--------|
 | [Day-ahead load forecasting](benchmarks/load-forecasting-dayahead.md) | Distribution / Markets | MAE, RMSE, MAPE | 🚧 Draft |
+| Power flow surrogate (GridFM data) | Transmission | MAE on V, P, Q | 📋 Planned |
 | Short-term solar output forecasting | Generation / DER | MAE, RMSE | 📋 Planned |
 | Meter anomaly detection | Customer / Distribution | F1, AUC-PR | 📋 Planned |
 | Wholesale price forecasting | Markets | MAE, RMSE, CRPS | 📋 Planned |
